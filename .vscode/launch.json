@@ -2,6 +2,8 @@
     "version": "0.2.0",
     "configurations": [
         {
+            // doc:
+            // https://github.com/microsoft/vscode-docs/blob/main/docs/cpp/launch-json-reference.md
             "name": "cppvsdbg",
             "type": "cppvsdbg",
             "request": "launch",
