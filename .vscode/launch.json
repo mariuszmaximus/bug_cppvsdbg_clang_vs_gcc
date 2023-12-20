@@ -1,0 +1,48 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "cppvsdbg",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "cwd": "${command:cmake.launchTargetDirectory}",
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "lldb",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "cwd": "${command:cmake.launchTargetDirectory}",
+        },
+        {
+            "name": "gdb",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${command:cmake.launchTargetDirectory}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                // opcjonalne ladowanie plikow
+                {
+                    // enable libcxx-pretty-printers in launch.json
+                    "description": "Enable pretty-printing for gdb",
+                     "text": "python import sys; sys.path.insert(0, 'c:/msys64/clang64/share/clang/libcxx-pretty-printers/src'); from libcxx.v1.printers import register_libcxx_printers; register_libcxx_printers (None)",
+                    "ignoreFailures": false
+                },
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": false
+                },
+            ]
+        },
+
+    ]
+}
