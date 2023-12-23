@@ -9,7 +9,7 @@
             "request": "launch",
             "program": "${command:cmake.launchTargetPath}",
             "cwd": "${command:cmake.launchTargetDirectory}",
-            "visualizerFile": "${workspaceFolder}\\clang.natvis",
+            "visualizerFile": "${workspaceFolder}\\aaa.natvis",
         },
         {
             "type": "lldb",
